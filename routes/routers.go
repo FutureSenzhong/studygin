@@ -2,9 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
+	"net/http"
 	"studygin/handler"
 )
-
 
 func Routers(r *gin.Engine) {
 	//r.Static("/assets", "./assets")
@@ -12,6 +12,10 @@ func Routers(r *gin.Engine) {
 	// 为 multipart forms 设置较低的内存限制 (默认是 32 MiB)
 	r.MaxMultipartMemory = 8 << 20 // 8 MiB
 
+	//配置favicon.ico
+	// 静态资源加载，本例为css,js以及资源图片
+	r.StaticFS("/static", http.Dir(""))
+	r.StaticFile("/favicon.ico", "./resources/favicon.ico")
 	//路由分组设置
 	v1 := r.Group("v1")
 	{
