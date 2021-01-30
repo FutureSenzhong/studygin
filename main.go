@@ -5,7 +5,6 @@ import (
 	"studygin/server"
 )
 
-
 //var html = template.Must(template.New("https").Parse(`
 //<html>
 //<head>
@@ -18,11 +17,10 @@ import (
 //</html>
 //`))
 
-
 func main() {
 
 	// gin服务初始化配置
-	route := server.ServerIni()
+	route := server.EngineIni()
 
 	//路由函数
 	routes.Routers(route)

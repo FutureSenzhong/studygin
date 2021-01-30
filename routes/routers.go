@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"studygin/handler"
+	"studygin/middleware"
 )
 
 func Routers(r *gin.Engine) {
@@ -16,10 +17,11 @@ func Routers(r *gin.Engine) {
 	// 静态资源加载，本例为css,js以及资源图片
 	r.StaticFS("/static", http.Dir(""))
 	r.StaticFile("/favicon.ico", "./resources/favicon.ico")
+
+	r.GET("/ping", middleware.MyLimit(), handler.Ping)
 	//路由分组设置
 	v1 := r.Group("v1")
 	{
-		v1.GET("/ping", handler.Ping)
 		v1.GET("/someJSON", handler.SomeJson)
 		v1.GET("/index", handler.Index)
 
