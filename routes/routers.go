@@ -40,4 +40,13 @@ func Routers(r *gin.Engine) {
 		v1.GET("/longSync", handler.LongSync)
 	}
 
+	sql := r.Group("sql")
+	{
+		//数据库的CRUD--->gin的 post、get、put、delete方法
+		sql.POST("/insert", handler.InsertData)   //添加数据
+		sql.GET("/get", handler.GetData)          //查询数据（单条记录）
+		sql.GET("/mulget", handler.GetMulData)    //查询数据（多条记录）
+		sql.PUT("/update", handler.UpdateData)    //更新数据
+		sql.DELETE("/delete", handler.DeleteData) //删除数据
+	}
 }

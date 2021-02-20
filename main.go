@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"studygin/config"
+	_ "studygin/config"
+	_ "studygin/db"
 	"studygin/routes"
 	"studygin/server"
 )
@@ -22,7 +22,7 @@ import (
 func main() {
 
 	// my 配置
-	fmt.Println("当前配置：", config.EnvConfig)
+	//fmt.Println("当前配置：", config.EnvConfig)
 	// gin服务初始化配置
 	route := server.EngineIni()
 
