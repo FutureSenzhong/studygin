@@ -63,6 +63,7 @@ func init() {
 		panic(fmt.Errorf("Unmarshal error ViperConfig json: %s \n", err))
 	}
 	// 通过环境变量动态控制配置
+	fmt.Println(os.Environ())
 	if env := os.Getenv("ENV"); env != "" {
 		fmt.Printf("本地环境变量 ENV=%s\n", env)
 		EnvConfig = GetConfigByEnv(env)

@@ -33,7 +33,7 @@ func init() {
 		fmt.Println("数据库连接出现了问题：", err)
 		return
 	}
-	fmt.Println("数据库连接成功!")
+	fmt.Printf("数据库'%s'连接成功!\n", name)
 }
 
-//todo:  go-sql-driver地址：https://github.com/go-sql-driver/mysql
+//go-sql-driver地址：https://github.com/go-sql-driver/mysql
