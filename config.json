@@ -1,0 +1,32 @@
+{
+  "development": {
+    "redis": "127.0.0.1:6379",
+    "mysql": {
+      "port": 3306,
+      "host": "127.0.0.1",
+      "username": "root",
+      "password": "123456",
+      "name": "gin"
+    }
+  },
+  "testing": {
+    "redis": "127.0.0.1:6379",
+    "mysql": {
+      "port": 3306,
+      "host": "127.0.0.1",
+      "username": "root",
+      "password": "123456",
+      "name": "gin"
+    }
+  },
+  "production": {
+    "redis": "127.0.0.1:6379",
+    "mysql": {
+      "port": 3306,
+      "host": "127.0.0.1",
+      "username": "root",
+      "password": "123456",
+      "name": "gin"
+    }
+  }
+}
